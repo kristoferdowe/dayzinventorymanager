@@ -1,16 +1,11 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Landing from "./landingpage.js";
-import Userlist from "./userlists";
-
 import React, { Component } from "react";
 
 //https://stackoverflow.com/questions/4999064/regex-for-string-contains - resource used for parsing method
 
-class App extends React.Component {
+class Fileform extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: "", inventory: { survivorList: {} } };
+    this.state = { value: "", inventory: {} };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -135,7 +130,7 @@ class App extends React.Component {
     this.setState({ value: event.target.value });
   }
   onChangeLoadout() {
-    //this.state.inventory;
+    this.props.changeInventory(this.state.inventory);
     //this.setState({});
   }
   componentDidUpdate() {
@@ -148,7 +143,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.inventory.survivorList);
     return (
       <div className="container-2">
         <form onSubmit={this.handleSubmit}>
@@ -163,10 +157,9 @@ class App extends React.Component {
         <button onClick={this.onChangeLoadout.bind(this)} className="btn">
           Post
         </button>
-        <Userlist survivorList={this.state.inventory.survivorList} />
       </div>
     );
   }
 }
 
-export default App;
+export default Fileform;
