@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 //Holds List to be rendered after file is uploaded
 class Userlist extends React.Component {

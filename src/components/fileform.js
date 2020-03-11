@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Userlist from "./userlists";
 
 //https://stackoverflow.com/questions/4999064/regex-for-string-contains - resource used for parsing method
 
@@ -157,6 +158,7 @@ class Fileform extends React.Component {
         <button onClick={this.onChangeLoadout.bind(this)} className="btn">
           Post
         </button>
+        {/* <Userlist survivorList={this.state.inventory.survivorList} /> */}
       </div>
     );
   }
